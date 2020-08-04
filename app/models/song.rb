@@ -11,4 +11,7 @@ class Song < ActiveRecord::Base
   def song_genre_id=(id)
     self.genre.id = id.to_i
   end
+  def song_genre_id
+    self.genre.id ? self.genre.id : nil
+  end
 end
