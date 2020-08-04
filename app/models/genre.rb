@@ -1,3 +1,5 @@
 class Genre < ActiveRecord::Base
-  # add associations
+  belongs_to :Artist
+  belongs_to :genre 
+  has_many :notes
 end
