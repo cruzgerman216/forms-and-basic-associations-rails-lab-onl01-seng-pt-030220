@@ -23,11 +23,9 @@ class Song < ActiveRecord::Base
   end
 
   def note_ids=(ids)
-    ids.each do |content|
-      unless content.empty?
-        self.notes << Note.create(content: content)
-        self.save
-      end
+    ids.each do |id|
+      note = Note.find(id)
+      self.notes << note
     end
   end
 end
