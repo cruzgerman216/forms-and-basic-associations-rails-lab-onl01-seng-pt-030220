@@ -8,10 +8,10 @@ class Song < ActiveRecord::Base
   def artist_name
     self.artist ? self.artist.name : nil
   end
-  def song_genre_id=(id)
+  def genre_id=(id)
     self.genre.id = id.to_i
   end
-  def song_genre_id
+  def genre_id
     self.genre ? self.genre.id : nil
   end
 end
