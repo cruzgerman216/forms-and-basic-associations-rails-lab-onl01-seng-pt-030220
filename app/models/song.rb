@@ -23,8 +23,8 @@ class Song < ActiveRecord::Base
   end
 
   def content=(c)
-    c.each do |id|
-    self.notes << Note.create(conent: c)
+    c.each do |cs|
+    self.notes << Note.create(conent: cs)
     self.save
     end
   end
