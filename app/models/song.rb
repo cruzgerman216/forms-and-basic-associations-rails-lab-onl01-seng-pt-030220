@@ -16,9 +16,16 @@ class Song < ActiveRecord::Base
   # end
   def genre_name
   self.genre.name if self.genre
-end
+  end
 
-def genre_name=(name)
-  self.genre = Genre.find_or_create_by(name: name)
-end
+  def genre_name=(name)
+    self.genre = Genre.find_or_create_by(name: name)
+  end
+
+  def note_ids=(ids)
+    ids.each do |id|
+      note = Note.find(id)
+      self.notes << note
+    end
+  end
 end
